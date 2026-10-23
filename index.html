@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#e3efff" />
+  <title>Tristan Odencio | BSIT Student Portfolio</title>
+  <meta name="description" content="Portfolio of Tristan Odencio — BSIT student at Cebu Eastern College building web systems, UI designs, games, and short films." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%230a7aff'/><text x='50' y='66' font-size='52' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'>T</text></svg>" />
+</head>
+<body>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+  <div class="bg" aria-hidden="true">
+    <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
+    <div class="grid-lines"></div>
+  </div>
+
+  <!-- Dynamic Island notification -->
+  <div class="island" id="island" role="status" aria-live="polite"><span class="island-dot"></span><span id="islandText"></span></div>
+
+  <!-- ===== TOP NAV (desktop) / TOP BAR (mobile) ===== -->
+  <header class="nav-wrap">
+    <nav class="nav glass" aria-label="Main">
+      <a href="#home" class="logo"><span class="logo-mark">T</span><span class="logo-text">tristan<span class="logo-dot">.dev</span></span></a>
+      <ul class="nav-links">
+        <li><a href="#home" data-sec="home" class="active">Home</a></li>
+        <li><a href="#about" data-sec="about">About</a></li>
+        <li><a href="#skills" data-sec="skills">Skills</a></li>
+        <li><a href="#projects" data-sec="projects">Projects</a></li>
+        <li><a href="#contact" data-sec="contact">Contact</a></li>
+      </ul>
+      <button class="icon-btn" id="themeToggle" aria-label="Toggle light and dark mode">
+        <svg class="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ===== BOTTOM DOCK (mobile only) ===== -->
+  <nav class="dock glass" aria-label="Quick navigation">
+    <a href="#home" data-sec="home" class="active"><svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg><span>Home</span></a>
+    <a href="#about" data-sec="about"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg><span>About</span></a>
+    <a href="#skills" data-sec="skills"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/></svg><span>Skills</span></a>
+    <a href="#projects" data-sec="projects"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg><span>Work</span></a>
+    <a href="#contact" data-sec="contact"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.7A8 8 0 1 1 21 12z"/></svg><span>Contact</span></a>
+  </nav>
+
+  <main>
+    <!-- ===== HOME: bento grid ===== -->
+    <section id="home" class="section hero">
+      <div class="bento">
+        <div class="tile intro glass spot reveal">
+          <p class="hello">👋 Hello, I'm</p>
+          <h1>Tristan<br /><span class="grad">Odencio</span></h1>
+          <p class="typed-line">I create <span id="typed"></span><span class="caret">|</span></p>
+          <p class="lead">A BSIT student at Cebu Eastern College who turns real community problems into simple, working web systems — and tells stories through design and film.</p>
+          <div class="cta">
+            <a href="#projects" class="btn btn-primary">View my work <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a href="#contact" class="btn btn-glass">Get in touch</a>
+          </div>
+        </div>
+
+        <div class="tile photo glass reveal" data-tilt>
+          <img src="images/profile.jpg" alt="Portrait of Tristan Odencio" width="800" height="800" />
+          <div class="photo-cap glass">
+            <strong>Tristan Odencio</strong>
+            <span>BSIT · Cebu Eastern College</span>
+          </div>
+        </div>
+
+        <button class="tile now glass spot reveal" data-open="reksolva" aria-label="Open Reksolva project details">
+          <span class="tile-label"><span class="live-dot"></span> Currently building</span>
+          <strong class="now-title">Reksolva</strong>
+          <span class="now-sub">AI barangay complaint system</span>
+          <span class="tile-arrow"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+        </button>
+
+        <div class="tile clock glass spot reveal">
+          <span class="tile-label">📍 Cebu City, PH</span>
+          <strong class="time" id="clock">--:--</strong>
+          <span class="now-sub" id="clockSub">Local time</span>
+        </div>
+
+        <div class="tile apps glass spot reveal">
+          <span class="tile-label">Find me on</span>
+          <div class="app-row">
+            <a href="https://github.com/tristanodencio" target="_blank" rel="noopener" class="app-ico gh" aria-label="GitHub">
+              <svg viewBox="0 0 24 24"><path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0C17.3 4.7 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg>
+            </a>
+            <a href="https://www.facebook.com/share/1FMBwrmNXv/?mibextid=wwXIfr" target="_blank" rel="noopener" class="app-ico fb" aria-label="Facebook">
+              <svg viewBox="0 0 24 24"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4H7.1V12h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v2.9h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4A12 12 0 0 0 24 12z"/></svg>
+            </a>
+            <a href="mailto:tristanodencio@gmail.com" class="app-ico ml" aria-label="Email">
+              <svg viewBox="0 0 24 24" class="stroke"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tools marquee -->
+    <div class="marquee" aria-label="Tools I use">
+      <div class="marquee-track">
+        <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Python</span><span>Django</span><span>Figma</span><span>GitHub</span><span>UI Design</span><span>Video Directing</span><span>Research</span>
+        <span aria-hidden="true">HTML</span><span aria-hidden="true">CSS</span><span aria-hidden="true">JavaScript</span><span aria-hidden="true">Python</span><span aria-hidden="true">Django</span><span aria-hidden="true">Figma</span><span aria-hidden="true">GitHub</span><span aria-hidden="true">UI Design</span><span aria-hidden="true">Video Directing</span><span aria-hidden="true">Research</span>
+      </div>
+    </div>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about" class="section">
+      <div class="section-head reveal">
+        <span class="eyebrow">About me</span>
+        <h2>Developer, designer &amp; storyteller.</h2>
+      </div>
+      <div class="about-grid">
+        <div class="glass card spot about-text reveal">
+          <!-- EDIT: your background and interests in your own words -->
+          <p>I'm an Information Technology student at <strong>Cebu Eastern College</strong>. Most of my experience comes from class projects and our capstone, where I work with a team to plan, design, document, and build a web-based system for a real barangay.</p>
+          <p>I'm most interested in web development, UI design, and systems that make public services easier to use — and outside of code, I enjoy filmmaking. I co-directed the short film music video <em>Tahanan</em>.</p>
+          <p class="muted">Right now I'm comfortable building responsive pages with HTML, CSS, and JavaScript, and I'm still growing in back-end development with Django, databases, and deployment.</p>
+        </div>
+        <div class="widgets">
+          <div class="glass widget spot reveal"><span class="w-ico">📁</span><span class="num" data-count="5">0</span><span class="lbl">Projects featured</span></div>
+          <div class="glass widget spot reveal"><span class="w-ico">🧩</span><span class="num" data-count="4">0</span><span class="lbl">Fields: web, game, UI, video</span></div>
+          <div class="glass widget spot reveal"><span class="w-ico">👥</span><span class="num" data-count="5">0</span><span class="lbl">Members in our capstone team</span></div>
+          <div class="glass widget spot reveal"><span class="w-ico">🎬</span><span class="num" data-count="1">0</span><span class="lbl">Music video co-directed</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SKILLS: activity rings ===== -->
+    <section id="skills" class="section">
+      <div class="section-head reveal">
+        <span class="eyebrow">Skills</span>
+        <h2>What I can do — honestly.</h2>
+        <p class="muted">Each ring shows where I am right now, not where I want to be.</p>
+      </div>
+      <!-- EDIT: change data-level (0–100) to match your real abilities -->
+      <div class="skills-grid">
+        <div class="glass card spot ring-card reveal">
+          <div class="rings" data-rings>
+            <svg viewBox="0 0 120 120" aria-hidden="true"></svg>
+          </div>
+          <div class="ring-info">
+            <h3>Front-end</h3>
+            <ul class="legend">
+              <li data-level="80"><i></i>HTML &amp; CSS <span>Comfortable</span></li>
+              <li data-level="60"><i></i>JavaScript <span>Growing</span></li>
+              <li data-level="60"><i></i>Responsive design <span>Growing</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="glass card spot ring-card reveal">
+          <div class="rings" data-rings>
+            <svg viewBox="0 0 120 120" aria-hidden="true"></svg>
+          </div>
+          <div class="ring-info">
+            <h3>Back-end &amp; Data</h3>
+            <ul class="legend">
+              <li data-level="50"><i></i>Python &amp; Django <span>Learning</span></li>
+              <li data-level="55"><i></i>Databases &amp; ERD <span>Growing</span></li>
+              <li data-level="40"><i></i>APIs <span>Learning</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="glass card spot ring-card reveal">
+          <div class="rings" data-rings>
+            <svg viewBox="0 0 120 120" aria-hidden="true"></svg>
+          </div>
+          <div class="ring-info">
+            <h3>Design &amp; Creative</h3>
+            <ul class="legend">
+              <li data-level="65"><i></i>Figma &amp; UI design <span>Growing</span></li>
+              <li data-level="60"><i></i>Video directing <span>Growing</span></li>
+              <li data-level="70"><i></i>Documentation <span>Comfortable</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section id="projects" class="section">
+      <div class="section-head reveal">
+        <span class="eyebrow">Projects</span>
+        <h2>Things I've built &amp; made.</h2>
+      </div>
+      <div class="filters reveal" aria-label="Filter projects">
+        <button class="chip active" data-filter="all">All</button>
+        <button class="chip" data-filter="web">Web systems</button>
+        <button class="chip" data-filter="game">Game</button>
+        <button class="chip" data-filter="design">UI Design</button>
+        <button class="chip" data-filter="video">Video</button>
+      </div>
+
+      <!-- Featured, ongoing -->
+      <article id="reksolva" class="glass project featured spot reveal" data-cat="web"
+        data-title="Reksolva — Barangay Complaint Management System"
+        data-status="Ongoing · Capstone project in development"
+        data-desc="An AI-powered web system for Barangay San Nicolas Central, Cebu City. Community members can report concerns by text or voice without an account, pin the exact location, and follow progress with a unique tracking number. The system checks that the location is inside the barangay boundary, verifies the mobile number by SMS OTP, suggests a complaint category with AI, and flags possibly emergency-related reports. Barangay staff manage, assign and resolve complaints through role-based dashboards with an audit log."
+        data-role="[EDIT: your exact part — e.g. front-end pages, database design, documentation, program workflow]"
+        data-stack="Web system · AI classification · Geospatial verification · SMS OTP"
+        data-img="images/project-reksolva.jpg">
+        <div class="thumb"><img src="images/project-reksolva.jpg" alt="Reksolva home page" loading="lazy" /></div>
+        <div class="project-body">
+          <div class="meta"><span class="status"><span class="live-dot"></span>Ongoing</span><span>Capstone · 2026</span></div>
+          <h3>Reksolva</h3>
+          <p>Report community concerns, track them until resolved. AI-powered barangay complaint management with geospatial jurisdiction verification, SMS OTP, and status tracking.</p>
+          <ul class="feat-list">
+            <li>Text or voice reporting</li><li>Location verified</li><li>SMS verification</li><li>Tracking number</li>
+          </ul>
+          <div class="card-actions"><button class="btn btn-primary btn-sm open-modal">View details</button></div>
+        </div>
+      </article>
+
+      <div class="projects-row" id="projectsRow">
+        <article class="glass project spot reveal" data-cat="web"
+          data-title="CEC IT Student Council — Electronic Voting System"
+          data-desc="A web-based electronic voting system for the Cebu Eastern College IT Student Council, built with Django. Students log in to cast their votes online, and the system includes a Report Issue / Inquiry button for support. Built as a team project (BOBA Team)."
+          data-role="[EDIT: your part in the BOBA Team — e.g. back-end, UI, database]"
+          data-stack="Python · Django · HTML · CSS"
+          data-img="images/project-voting.jpg"
+          data-l1="https://github.com/tristanodencio/CEC_VOTING" data-l1-label="Source code">
+          <div class="thumb"><img src="images/project-voting.jpg" alt="CEC Voting System screenshot" loading="lazy" /></div>
+          <div class="project-body">
+            <div class="meta"><span class="badge">Django</span><span>2026</span></div>
+            <h3>CEC Voting System</h3>
+            <p>Django e-voting system for the CEC IT Student Council — “Empowering the IT Student Body through Digital Democracy.”</p>
+            <div class="card-actions">
+              <button class="btn btn-glass btn-sm open-modal">Details</button>
+              <a class="btn btn-primary btn-sm" href="https://github.com/tristanodencio/CEC_VOTING" target="_blank" rel="noopener">Source code ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="glass project spot reveal" data-cat="game"
+          data-title="Catch the Falling Object"
+          data-desc="A browser arcade game: move the paddle with the arrow keys to catch colorful falling balls. Each catch adds to your score, and you have 3 lives. Press Space or P to pause and R to restart."
+          data-role="Built and published the game myself on GitHub Pages."
+          data-stack="HTML · CSS · JavaScript"
+          data-img="images/project-catch.jpg"
+          data-l1="https://tristanodencio.github.io/CatchTheFallingObject/" data-l1-label="Play the game">
+          <div class="thumb"><img src="images/project-catch.jpg" alt="Catch the Falling Object screenshot" loading="lazy" /></div>
+          <div class="project-body">
+            <div class="meta"><span class="badge">Game</span><span>2026</span></div>
+            <h3>Catch the Falling Object</h3>
+            <p>A playable browser game with score, lives, pause and restart controls.</p>
+            <div class="card-actions">
+              <button class="btn btn-glass btn-sm open-modal">Details</button>
+              <a class="btn btn-primary btn-sm" href="https://tristanodencio.github.io/CatchTheFallingObject/" target="_blank" rel="noopener">Play ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="glass project spot reveal" data-cat="design"
+          data-title="The Thelonious Monk — Website Design"
+          data-desc="A website design concept for jazz legend Thelonious Monk, with Home, Music, Store and About pages. It uses bold yellow typography over a deep blue photo, and clear Read More, Subscribe and Sign In calls to action."
+          data-role="Designed the layout, typography and interactive prototype in Figma."
+          data-stack="Figma · UI design · Prototyping"
+          data-img="images/project-monk.jpg"
+          data-l1="https://www.figma.com/proto/O3Mzim1hgcnnYN8BV4kBjs/THELONIOUS-MONK?node-id=1-2&amp;p=f&amp;t=MB1IlzvPFnQUg5zE-0&amp;scaling=min-zoom&amp;content-scaling=fixed&amp;page-id=0%3A1&amp;starting-point-node-id=1%3A2&amp;show-proto-sidebar=1" data-l1-label="View Figma prototype">
+          <div class="thumb"><img src="images/project-monk.jpg" alt="Thelonious Monk website design" loading="lazy" /></div>
+          <div class="project-body">
+            <div class="meta"><span class="badge">UI Design</span><span>2026</span></div>
+            <h3>Thelonious Monk Website</h3>
+            <p>A bold, music-themed website design and clickable prototype made in Figma.</p>
+            <div class="card-actions">
+              <button class="btn btn-glass btn-sm open-modal">Details</button>
+              <a class="btn btn-primary btn-sm" href="https://www.figma.com/proto/O3Mzim1hgcnnYN8BV4kBjs/THELONIOUS-MONK?node-id=1-2&amp;p=f&amp;t=MB1IlzvPFnQUg5zE-0&amp;scaling=min-zoom&amp;content-scaling=fixed&amp;page-id=0%3A1&amp;starting-point-node-id=1%3A2&amp;show-proto-sidebar=1" target="_blank" rel="noopener">Prototype ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="glass project spot reveal" data-cat="video"
+          data-title="Tahanan — A Short Film Music Video"
+          data-desc="A short film music video starring Haizelle Gabutan and Damien Mathew Alverio, with music by Adie (Adrian Garcia Eugenio)."
+          data-role="Co-directed with Regie Banez."
+          data-stack="Directing · Short film · Music video"
+          data-img="images/project-tahanan.jpg"
+          data-l1="https://www.facebook.com/reel/1183849120460991" data-l1-label="Watch full video"
+          data-l2="https://www.facebook.com/reel/1433534885165602" data-l2-label="Watch trailer">
+          <div class="thumb"><img src="images/project-tahanan.jpg" alt="Tahanan title card" loading="lazy" /></div>
+          <div class="project-body">
+            <div class="meta"><span class="badge">Video</span><span>2026</span></div>
+            <h3>Tahanan</h3>
+            <p>A short film music video I co-directed.</p>
+            <div class="card-actions">
+              <a class="btn btn-glass btn-sm" href="https://www.facebook.com/reel/1433534885165602" target="_blank" rel="noopener">Trailer ↗</a>
+              <a class="btn btn-primary btn-sm" href="https://www.facebook.com/reel/1183849120460991" target="_blank" rel="noopener">Full video ↗</a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="swipe-dots" id="swipeDots" aria-hidden="true"></div>
+      <p class="empty muted" id="emptyMsg" hidden>No other projects in this category yet.</p>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="section">
+      <div class="section-head reveal">
+        <span class="eyebrow">Contact</span>
+        <h2>Let's work together.</h2>
+        <p class="muted">Have a project, collaboration, or question? Send me a message.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="glass card spot contact-info reveal">
+          <h3>Reach me directly</h3>
+          <div class="list-group">
+            <a href="mailto:tristanodencio@gmail.com" class="list-row">
+              <span class="c-ico"><svg viewBox="0 0 24 24" class="stroke"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+              <span class="row-text"><small>Email</small><strong id="emailText">tristanodencio@gmail.com</strong></span>
+              <span class="chev">›</span>
+            </a>
+            <a href="https://www.facebook.com/share/1FMBwrmNXv/?mibextid=wwXIfr" target="_blank" rel="noopener" class="list-row">
+              <span class="c-ico"><svg viewBox="0 0 24 24"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4H7.1V12h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v2.9h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4A12 12 0 0 0 24 12z"/></svg></span>
+              <span class="row-text"><small>Facebook</small><strong>Tristan Odencio</strong></span>
+              <span class="chev">›</span>
+            </a>
+            <a href="https://github.com/tristanodencio" target="_blank" rel="noopener" class="list-row">
+              <span class="c-ico"><svg viewBox="0 0 24 24"><path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0C17.3 4.7 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg></span>
+              <span class="row-text"><small>GitHub</small><strong>tristanodencio</strong></span>
+              <span class="chev">›</span>
+            </a>
+          </div>
+          <button class="btn btn-glass btn-sm copy-btn" id="copyEmail">
+            <svg viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg> Copy email
+          </button>
+        </div>
+
+        <!-- Opens the visitor's email app with the message filled in (no server needed) -->
+        <form class="glass card spot contact-form reveal" id="contactForm" novalidate>
+          <div class="field">
+            <input type="text" id="name" name="name" placeholder=" " required />
+            <label for="name">Your name</label>
+            <small class="err"></small>
+          </div>
+          <div class="field">
+            <input type="email" id="email" name="email" placeholder=" " required />
+            <label for="email">Your email</label>
+            <small class="err"></small>
+          </div>
+          <div class="field">
+            <textarea id="message" name="message" rows="5" placeholder=" " required></textarea>
+            <label for="message">Message</label>
+            <small class="err"></small>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Send message <svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg></button>
+          <p class="form-note muted">Opens your email app with the message ready to send.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="glass footer-inner">
+      <p>© <span id="year"></span> Tristan Odencio · Made in Cebu with HTML, CSS &amp; JavaScript</p>
+      <a href="#home">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <!-- Project details: centered card on desktop, bottom sheet on phones -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card glass" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+      <span class="grabber" aria-hidden="true"></span>
+      <button class="icon-btn modal-close" data-close aria-label="Close">✕</button>
+      <img id="mImg" src="" alt="" />
+      <div class="modal-body">
+        <p class="status" id="mStatus" hidden><span class="live-dot"></span><span></span></p>
+        <h3 id="mTitle"></h3>
+        <p id="mDesc"></p>
+        <h4>My contribution</h4>
+        <p id="mRole"></p>
+        <h4>Built with</h4>
+        <p id="mStack"></p>
+        <div class="modal-actions" id="mActions"></div>
+      </div>
+    </div>
+  </div>
+
+  <button class="to-top glass" id="toTop" aria-label="Back to top">↑</button>
+  <script src="script.js"></script>
+</body>
+</html>
