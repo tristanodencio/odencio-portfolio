@@ -6,7 +6,7 @@ const $$ = (s, p = document) => [...p.querySelectorAll(s)];
 const MY_EMAIL = "tristanodencio@gmail.com";
 const canHover = matchMedia("(hover: hover)").matches;
 
-/* ---------- Typing effect (EDIT the phrases) ---------- */
+/* ---------- Typing effect ---------- */
 const phrases = ["web systems.", "UI designs in Figma.", "Django apps.", "browser games.", "short films."];
 (function typeLoop() {
   const el = $("#typed");
