@@ -468,3 +468,7 @@ h3 { font-size: 1.22rem; }
   .nav-wrap.scrolled .nav { background-color: rgba(255, 255, 255, .92); }
   [data-theme="dark"] .nav-wrap.scrolled .nav { background-color: rgba(12, 33, 64, .94); }
 }
+
+/* Role credit line on project cards */
+.project-body > p.credit { flex: none; align-self: flex-start; padding: 6px 12px; border-radius: 12px; font-size: .85rem; font-weight: 650;
+  color: var(--link); background: rgba(10, 122, 255, .1); border: 1px solid rgba(10, 122, 255, .2); }
